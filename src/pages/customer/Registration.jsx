@@ -119,7 +119,7 @@ export default function Registration() {
     "Personal Details",
     "Experience",
     "Preferences",
-    "Upload Documents",
+    "Documents",
     "Review",
   ];
 
@@ -134,12 +134,12 @@ export default function Registration() {
         {steps.map((label, idx) => (
           <div key={idx} className="flex-1">
             <div
-              className={`h-2 ${
+              className={`h-2 rounded ${
                 idx + 1 <= step ? "bg-blue-600" : "bg-gray-300"
               } ${idx !== 0 ? "ml-2" : ""}`}
             />
             <p
-              className={`text-sm mt-2 ${
+              className={`text-sm mt-2 ml-2 ${
                 idx + 1 === step ? "font-bold" : ""
               } dark:text-white`}
             >
