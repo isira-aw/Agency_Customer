@@ -21,6 +21,13 @@ export const registrationAPI = {
       headers: { 'Content-Type': 'multipart/form-data' },
     });
   },
+  uploadPayment: (id, file) => {
+    const formData = new FormData();
+    formData.append('file', file);
+    return api.post(`/register/payment/${id}`, formData, {
+      headers: { 'Content-Type': 'multipart/form-data' },
+    });
+  },
   delete: (id) => api.delete(`/register/delete/${id}`),
 };
 

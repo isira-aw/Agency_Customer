@@ -82,7 +82,7 @@ export default function Home() {
                 title: "Career Support",
                 desc: "Guidance every step",
                 imageUrl:
-                  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBFyglEfAAPD7NM-b6TYZF1QzdhLsIILPtlnKTNRJTM0Hx-b4c_T5EsShDetY44bhbEzQ&usqp=CAU",
+                  "https://www.nsls.org/hs-fs/hubfs/Pillar%20Pages/Career%20Development/Self-Assessment%20Support%20Image.png?width=900&name=Self-Assessment%20Support%20Image.png",
               },
               {
                 icon: Briefcase,
