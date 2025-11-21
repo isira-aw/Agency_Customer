@@ -37,10 +37,10 @@ export default function CustomerLayout() {
               </Link>
 
               {/* Desktop Menu */}
-              <div className="hidden md:flex space-x-6">
+              <div className="hidden md:flex space-x-8 text-lg font-semibold font-sans">
                 <Link
                   to="/"
-                  className={`hover:text-blue-200 transition ${
+                  className={`hover:text-blue-200 transition-all duration-200 ${
                     isActive("/") ? "border-b-2 border-white" : ""
                   }`}
                 >
@@ -48,7 +48,7 @@ export default function CustomerLayout() {
                 </Link>
                 <Link
                   to="/gallery"
-                  className={`hover:text-blue-200 transition ${
+                  className={`hover:text-blue-200 transition-all duration-200 ${
                     isActive("/gallery") ? "border-b-2 border-white" : ""
                   }`}
                 >
@@ -57,7 +57,7 @@ export default function CustomerLayout() {
                 {!user && (
                   <Link
                     to="/register"
-                    className={`hover:text-blue-200 transition ${
+                    className={`hover:text-blue-200 transition-all duration-200 ${
                       isActive("/register") ? "border-b-2 border-white" : ""
                     }`}
                   >
