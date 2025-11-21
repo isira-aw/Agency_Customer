@@ -37,10 +37,10 @@ export default function CustomerLayout() {
               </Link>
 
               {/* Desktop Menu */}
-              <div className="hidden md:flex space-x-6">
+              <div className="hidden md:flex space-x-8 text-lg font-semibold font-sans">
                 <Link
                   to="/"
-                  className={`hover:text-blue-200 transition ${
+                  className={`hover:text-blue-200 transition-all duration-200 ${
                     isActive("/") ? "border-b-2 border-white" : ""
                   }`}
                 >
@@ -48,7 +48,7 @@ export default function CustomerLayout() {
                 </Link>
                 <Link
                   to="/gallery"
-                  className={`hover:text-blue-200 transition ${
+                  className={`hover:text-blue-200 transition-all duration-200 ${
                     isActive("/gallery") ? "border-b-2 border-white" : ""
                   }`}
                 >
@@ -57,24 +57,28 @@ export default function CustomerLayout() {
                 {!user && (
                   <Link
                     to="/register"
-                    className={`hover:text-blue-200 transition ${
+                    className={`hover:text-blue-200 transition-all duration-200 ${
                       isActive("/register") ? "border-b-2 border-white" : ""
                     }`}
                   >
                     Register
                   </Link>
                 )}
+                {user && (
+                  <Link
+                      to="/booking"
+                      className={`hover:text-blue-200 transition-all duration-200 ${
+                    isActive("/booking") ? "border-b-2 border-white" : ""
+                  }`}
+                    >
+                      Book Interview
+                    </Link>
+                )}
               </div>
 
               <div className="flex items-center space-x-4">
                 {user ? (
                   <>
-                    <Link
-                      to="/booking"
-                      className="hidden md:flex items-center space-x-2 hover:bg-blue-700 px-3 py-2 rounded transition"
-                    >
-                      Book Interview
-                    </Link>
                     <Link
                       to="/profile"
                       className="hidden md:flex items-center space-x-2 hover:bg-blue-700 px-3 py-2 rounded transition"
@@ -135,12 +139,15 @@ export default function CustomerLayout() {
                     Register
                   </Link>
                 )}
-                <Link to="/booking" className="block py-2 hover:text-blue-200">
-                  Book Interview
-                </Link>
-
+                
                 {user ? (
                   <>
+                  <Link
+                      to="/booking" 
+                      className="block py-2 hover:text-blue-200"
+                    >
+                      Book Interview 
+                    </Link>
                     <Link
                       to="/profile"
                       className="block py-2 hover:text-blue-200"

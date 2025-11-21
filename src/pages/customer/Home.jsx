@@ -3,12 +3,13 @@ import { useEffect, useState } from "react";
 import { ArrowRight, Globe, Users, Briefcase } from "lucide-react";
 import { Link } from "react-router-dom";
 import { settingsAPI } from "../../services/api";
+import LiquidEther from "../../components/LiquidEther.jsx";
 
 export default function Home() {
   const [content, setContent] = useState({
-    hero_title: "Your Gateway to European Employment",
+    hero_title: "Your Gateway to European Employment..",
     hero_subtitle:
-      "Connecting talented professionals with opportunities across EU",
+      "Connecting talented professionals with opportunities across EU...",
     about_text:
       "We specialize in placing skilled workers in positions throughout Europe.....",
     countries: ["Germany", "France", "Netherlands", "Belgium", "Austria"],
@@ -23,9 +24,30 @@ export default function Home() {
 
   return (
     <div className="dark:bg-gray-900 dark:text-white">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-20">
-        <div className="container mx-auto px-4">
+      <div className="relative w-full h-[600px] overflow-hidden">
+        {/* LiquidEther Background */}
+        <div className="absolute inset-0">
+          <LiquidEther
+            colors={["#5227FF", "#FF9FFC", "#B19EEF"]}
+            mouseForce={20}
+            cursorSize={100}
+            isViscous={false}
+            viscous={30}
+            iterationsViscous={32}
+            iterationsPoisson={32}
+            resolution={0.5}
+            isBounce={false}
+            autoDemo={true}
+            autoSpeed={0.5}
+            autoIntensity={2.2}
+            takeoverDuration={0.25}
+            autoResumeDelay={3000}
+            autoRampDuration={0.6}
+          />
+        </div>
+
+        {/* CONTENT OVERLAY */}
+        <div className="relative z-10 container mx-auto px-4 h-full flex items-center justify-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -34,18 +56,19 @@ export default function Home() {
           >
             <h1 className="text-5xl font-bold mb-6">{content.hero_title}</h1>
             <p className="text-xl mb-8">{content.hero_subtitle}</p>
+
             <Link to="/register">
               <motion.button
-                whileHover={{ scale: 1.05 }}
+                whileHover={{ scale: 1.07 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold flex items-center mx-auto"
+                className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold flex items-center mx-auto"
               >
                 Get Started <ArrowRight className="ml-2" size={20} />
               </motion.button>
             </Link>
           </motion.div>
         </div>
-      </section>
+      </div>
 
       {/* About Section */}
       <section className="py-16 bg-gray-50 dark:bg-gray-800">
@@ -106,11 +129,13 @@ export default function Home() {
                   className="mx-auto mb-4 text-blue-600"
                   size={48}
                 /> */}
-                <br /><br /><br />
-                <h2 className="text-xl font-semibold mb-2 text-white">{service.title}</h2>
-                <h3 className="text-white">
-                  {service.desc}
-                </h3>
+                <br />
+                <br />
+                <br />
+                <h2 className="text-xl font-semibold mb-2 text-white">
+                  {service.title}
+                </h2>
+                <h3 className="text-white">{service.desc}</h3>
               </motion.div>
             ))}
           </div>
